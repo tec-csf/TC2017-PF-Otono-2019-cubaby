@@ -47,7 +47,7 @@ Como parte de la entrega final del proyecto, se debe incluir la siguiente inform
 
 ## 2. Descripción del problema
 
-*[Incluya aquí la descripción del problema a resolver.]*
+El problema que se busca representar en este código es representar la carrera del Tour de Francia, en este caso la carrera se llama Tour de México, en el código paralelo se representan a los corredores con threads los cuales pueden sufrir un accidente del 10% por tick y pasan por x cantidad de etapas. 
 
 ## 3. Solución secuencial
 
