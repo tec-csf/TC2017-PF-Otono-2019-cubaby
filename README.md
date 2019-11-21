@@ -51,7 +51,7 @@ El problema que se busca representar en este código es representar la carrera d
 
 ## 3. Solución secuencial
 
-*[Incluya aquí la descripción de la solución secuencial.]*
+Para resolver el problema de forma secuencial lo que se hizo 
 
 ## 4. Análisis de los inhibidores del paralelismo
 
