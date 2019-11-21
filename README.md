@@ -55,7 +55,9 @@ Para resolver el problema de forma secuencial lo que se hizo fue crear un vector
 
 ## 4. Análisis de los inhibidores del paralelismo
 
-*[Incluya aquí el análisis de los inhibidores presentes en su problema, así como la solución a los mismos.]*
+Para el código paralelo existen dos importamtes inhibidores los cuales son los siguientes: 
+    * Las funciones de print y de accidentes no pueden ser paralelizadas debido a que deben de ocurrir para un unico corredor           lo cual lo hace independiente a los demás.
+    * Solamente el ciclo interno es paralelizable dado que las etapas se deben de recorrer en orden.
 
 ## 5. Solución paralela
 
