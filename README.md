@@ -1,4 +1,4 @@
-# *[Poner aquí el Título del Proyecto]*
+# *[Tour de México ]*
 ---
 #### Materia: *Análisis y Diseño de Algoritmos (TC2017)*
 
@@ -7,8 +7,8 @@
 ##### Campus: *Santa Fe*
 
 ##### Integrantes:
-1. *[Poner aquí Nombre y Apellidos del integrante 1]* *[Matrícula]*
-2. *[Poner aquí Nombre y Apellidos del integrante 2]* *[Matrícula]*
+1. *[Juan Francisco Gortarez Ricardez]* *[A01021926]*
+2. *[Jorge Dmián Palacios Hristova]* *[A01654203]*
 
 ---
 ## 1. Aspectos generales
