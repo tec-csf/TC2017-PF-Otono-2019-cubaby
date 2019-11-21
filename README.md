@@ -49,7 +49,7 @@ Como parte de la entrega final del proyecto, se debe incluir la siguiente inform
 
 El problema que se busca representar en este código es representar la carrera del Tour de Francia, en este caso la carrera se llama Tour de México, en el código paralelo se representan a los corredores con threads los cuales pueden sufrir un accidente del 10% por tick y pasan por x cantidad de etapas. 
 
-## 3. Solución secuencial
+## 3. Solución secuencial [Secuencial](Secuencial/).
 
 Para resolver el problema de forma secuencial lo que se hizo fue crear un vector de ints que representan a los corredores, asi mismo se usa una función para crear accidentes aleatorios a los competidores con una probabilidad del 10%, depués el tiempo se mide conforme el vector de corredores recorre cada etapa y va avanzando el tiempo y se suma al contador del tiempo 0.0002 segundos el cual es el tiempo que pierde un corredor por un accidente. 
 
@@ -60,7 +60,7 @@ Para el código paralelo existen dos importamtes inhibidores los cuales son los 
 * Las funciones de print y de accidentes no pueden ser paralelizadas debido a que deben de ocurrir para un unico corredor           lo cual lo hace independiente a los demás.
 * Solamente el ciclo interno es paralelizable dado que las etapas se deben de recorrer en orden.
 
-## 5. Solución paralela
+## 5. Solución paralela [Paralelo](Paralelo/).
 
 *[Incluya aquí la descripción de la solución paralela.]*
 
