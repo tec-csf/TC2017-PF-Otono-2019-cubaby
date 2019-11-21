@@ -6,9 +6,15 @@
 #include <unistd.h>
 #include <algorithm>
 #include <chrono>
+#include <bits/stdc++.h>
 
 using namespace std;
 using namespace std::chrono;
+
+bool comparison(const pair<int, microseconds> &a, const pair<int, microseconds> &b)
+{
+    return a.second < b.second;
+}
 
 int hasAccident()
 {
@@ -25,16 +31,24 @@ int hasAccident()
 void printStandings(vector<int> stands, vector<microseconds> times)
 {
     vector<int> stripped;
+    vector<pair<int, microseconds>> joined;
+
     for (int s = 0; s < stands.size(); s++)
     {
+        pair<int, microseconds> temp;
+        temp.first = stands.at(s);
+        temp.second = times.at(s);
+        joined.push_back(temp);
+
         if (!count(stripped.begin(), stripped.end(), stands.at(s)))
         {
             stripped.push_back(stands.at(s));
         }
     }
-    for (int c = 0; c < stripped.size(); c++)
+    sort(joined.begin(), joined.end(), comparison);
+    for (int c = 0; c < joined.size(); c++)
     {
-        cout << "Competidor " << stripped.at(c) << " Con: " << times.at(c).count() << " microsegundos " << endl;
+        cout << "Competidor " << joined.at(c).first << " Con: " << joined.at(c).second.count() << " microsegundos " << endl;
     }
 }
 

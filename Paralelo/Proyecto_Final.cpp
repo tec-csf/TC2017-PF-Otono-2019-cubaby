@@ -10,7 +10,6 @@ using namespace std;
 
 int hasAccident()
 {
-    srand(time(NULL));
     int random = rand() % 11;
 
     if (random == 5)
@@ -39,11 +38,11 @@ void printStandings(vector<int> stands)
 
 int main(int argc, char const *argv[])
 {
-    if (argc == 1)
+    if (argc < 3)
     {
         printf("Uso: ./Proyecto_Final <numero de etapas> <numero de competidores>");
     }
-
+    srand(time(NULL));
     int num_competidores, etapas;
     int r;
     int q;
