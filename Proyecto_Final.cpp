@@ -46,30 +46,34 @@ int main(int argc, char const *argv[])
 
     int num_competidores, etapas;
     int r;
+    int q;
     int progreso = 0;
     etapas = atoi(argv[1]);
     num_competidores = atoi(argv[2]);
     omp_set_num_threads(num_competidores);
     vector<int> standings;
 
-#pragma omp parallel for private(r) reduction(+ \
-                                              : progreso)
-    for (int q = 0; q < etapas; q++)
+#pragma omp parallel
     {
-        printf("Etapa %d \n", q);
-        printStandings(standings);
-        standings.clear();
-
-        for (r = 0; r < 100; r++)
+        for (q = 0; q < etapas + 1; q++)
         {
-            int flag = hasAccident();
-            if (flag == 1)
+            printf("Etapa %d \n", q);
+            printStandings(standings);
+            standings.clear();
+
+#pragma for private(r) reduction(+ \
+                                 : progreso)
+            for (r = 0; r < 100; r++)
             {
-                sleep(0.002);
+                int flag = hasAccident();
+                if (flag == 1)
+                {
+                    sleep(0.002);
+                }
+                progreso += 1;
+                int id = omp_get_thread_num() + 1;
+                standings.push_back(id);
             }
-            progreso += 1;
-            int id = omp_get_thread_num();
-            standings.push_back(id);
         }
     }
 
