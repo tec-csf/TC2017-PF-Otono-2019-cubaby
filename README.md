@@ -8,7 +8,7 @@
 
 ##### Integrantes:
 1. *[Juan Francisco Gortarez Ricardez]* *[A01021926]*
-2. *[Jorge Dmián Palacios Hristova]* *[A01654203]*
+2. *[Jorge Damián Palacios Hristova]* *[A01654203]*
 
 ---
 ## 1. Aspectos generales
