@@ -19,10 +19,13 @@ bool comparison(const pair<int, microseconds> &a, const pair<int, microseconds> 
 int hasAccident()
 {
     int random = rand() % 11;
-
     if (random == 5)
     {
         return 1;
+    }
+    else if (random == 7)
+    {
+        return 2;
     }
     else
         return 0;
@@ -84,6 +87,12 @@ int main(int argc, char const *argv[])
                 {
                     // printf("Accidente de %d \n", v);
                     sleep(0.002);
+                }
+
+                else if (flag == 2)
+                {
+                    auto start = chrono::steady_clock::now();
+                    //printf("Inyeccion de sangre oxigenada de %d \n", omp_get_thread_num() + 1);
                 }
                 progreso += 1;
             }
