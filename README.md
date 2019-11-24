@@ -74,7 +74,7 @@ La gráfica comparando los dos tipos de algoritmos se encuentra en el pdf de: [D
 
 ## 8. Interpretación de los resultados
 
-*[Incluya aquí la interpretación de los resultados.]*
+Como se puede observar en los resultados de tiempo en las 5 entradas diferentes que se tomaron a la hora de correr cada uno de los programas se puede notar que el algoritmo secuencial tomo significante más tiempo que el paralelo y esto se debe a la forma en que esta paralelizado el programa este reliza las tareas de forma simultánea lo cual hace que el tiempo se reduzca en una gran cantidad como se puede ver en el pdf de: [Documentos](Docs/).
 
 ## 9. Guía paso a paso
 
