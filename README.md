@@ -66,7 +66,7 @@ Para el código paralelo existen dos importamtes inhibidores los cuales son los 
 
 ## 6. Tabla de resultados
 
-*[Incluya aquí la tabla con los resultados de las mediciones.]*
+La tabla de resultados se incluye en un pdf en la parte de [Documentos](Docs/). la tabla es una muestra de diferentes tiempos que se tomaron según las especificaciones cambiando el número de threads, al igual se incluye la gráfica de como varía el tiempo.
 
 ## 7. Gráfica(s) comparativa(s)
 
