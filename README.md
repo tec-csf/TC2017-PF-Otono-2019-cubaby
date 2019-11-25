@@ -62,7 +62,7 @@ Para el código paralelo existen dos importamtes inhibidores los cuales son los 
 
 ## 5. Solución [Paralelo](Paralelo/).
 
-Para la solución en paralelo lo que se hizo fue crear un 2 ciclos para que el programa pudiera representar los corredores usando threads, la solución se parece mucho a la secuencial debido a que el programa representa a los corredores y las etapas según sean especificadas por el usuario al igual hay eventos aleatorios lo cual afecta lops tiempos de los corredores.
+Para la solución en paralelo lo que se hizo fue crear un 2 ciclos para que el programa pudiera representar los corredores usando threads, la solución se parece mucho a la secuencial debido a que el programa representa a los corredores y las etapas según sean especificadas por el usuario al igual hay eventos aleatorios lo cual afecta lops tiempos de los corredores. Se uso un pragma para paralelizar el ciclo que simula los corredores que van avanzado por las etapas que son especificados por el usuario a la hora de correr el programa.
 
 ## 6. Tabla de resultados
 
@@ -79,6 +79,8 @@ Como se puede observar en los resultados de tiempo en las 5 entradas diferentes 
 ## 9. Guía paso a paso
 
 *[Incluya aquí la guía para la ejecución de los códigos.]*
+*Descargar el código 
+
 
 ## 10. Referencias
 
