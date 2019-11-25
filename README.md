@@ -82,4 +82,4 @@ Como se puede observar en los resultados de tiempo en las 5 entradas diferentes 
 
 ## 10. Referencias
 
-*[Incluya aquí las referencias a sitios de interés y cualquier otra información que haya utilizado para realizar el proyecto y que le puedan ser de utilidad a otras personas que quieran usarlo como referencia]*
+https://www.openmp.org/wp-content/uploads/OpenMP-4.0-C.pdf 
