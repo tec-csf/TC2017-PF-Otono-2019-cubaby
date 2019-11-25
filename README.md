@@ -74,7 +74,9 @@ Las gráficas comparando los dos tipos de algoritmos y sus tipos se encuentra en
 
 ## 8. Interpretación de los resultados
  
-Como se puede observar en los resultados de tiempo en las 5 entradas diferentes que se tomaron a la hora de correr cada uno de los programas se puede notar que el algoritmo secuencial tomo significante más tiempo que el paralelo y esto se debe a la forma en que esta paralelizado el programa este reliza las tareas de forma simultánea lo cual hace que el tiempo se reduzca en una gran cantidad como se puede ver en el pdf de: [Documentos](Docs/). De la misma manera se puede observar como varía el código paralelo según su tipo. Esto se ve en la sección [Documentos](Docs/). al igual se incluye sus gráficas.
+Como se puede observar en los resultados de tiempo en las 5 entradas diferentes que se tomaron durante la ejecución del programa se puede notar que el algoritmo secuencial tomó significantemente más tiempo que el paralelo. Esto probablemente se debe a la forma en que esta paralelizado el programa. Porque nosotros usamos una thread para simular un corredor, nos 'saltamos' la necesidad de tener un tercer ciclo, lo cual reduce la complejidad de O(n^3) en el secuencial a O(n^2). Esto se puede ver en nuestra sección de: [Documentos](Docs/). De la misma manera se puede observar como varía el código paralelo según su tipo. Nostros esperábamos que mientras más incrementaramos el número de corredores se acortaría la diferencia entre el secuencial y el paralelo por el incremento del overhead, sin embargo ocurrió lo contrario. Esto se puede deber a la reducción de complejidad mencionada previamente. 
+
+Finalmente, en lo referente a los diferentes métodos de paralelización, la diferencia fue mínima. En general, el método estático fue el más lento, mientras que el dinámico fue el segundo más tardado en cantidades bajas de competidores, pero en cantidades más altas terminó siendo el mejor método. 
 
 ## 9. Guía paso a paso
 
