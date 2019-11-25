@@ -79,7 +79,7 @@ Como se puede observar en los resultados de tiempo en las 5 entradas diferentes 
 ## 9. Guía paso a paso
 
 *[Incluya aquí la guía para la ejecución de los códigos.]*
-*Descargar el código 
+* Descargar el código 
 
 
 ## 10. Referencias
