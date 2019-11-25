@@ -70,7 +70,7 @@ La tabla de resultados se incluye en un pdf en la parte de [Documentos](Docs/). 
 
 ## 7. Gráfica(s) comparativa(s)
 
-La gráfica comparando los dos tipos de algoritmos se encuentra en el pdf de: [Documentos](Docs/).
+Las gráficas comparando los dos tipos de algoritmos y sus tipos se encuentra en el pdf de: [Documentos](Docs/).
 
 ## 8. Interpretación de los resultados
  
