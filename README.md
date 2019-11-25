@@ -66,15 +66,15 @@ Para el código paralelo existen dos importamtes inhibidores los cuales son los 
 
 ## 6. Tabla de resultados
 
-La tabla de resultados se incluye en un pdf en la parte de [Documentos](Docs/). la tabla es una muestra de diferentes tiempos que se tomaron según las especificaciones cambiando el número de threads, al igual se incluye la gráfica de como varía el tiempo.
+La tabla de resultados se incluye en un pdf en la parte de [Documentos](Docs/). la tabla es una muestra de diferentes tiempos que se tomaron según las especificaciones cambiando el número de threads, al igual se incluye la gráfica de como varía el tiempo en los códigos secuencial y los tipos de paralelo.
 
 ## 7. Gráfica(s) comparativa(s)
 
 La gráfica comparando los dos tipos de algoritmos se encuentra en el pdf de: [Documentos](Docs/).
 
 ## 8. Interpretación de los resultados
-
-Como se puede observar en los resultados de tiempo en las 5 entradas diferentes que se tomaron a la hora de correr cada uno de los programas se puede notar que el algoritmo secuencial tomo significante más tiempo que el paralelo y esto se debe a la forma en que esta paralelizado el programa este reliza las tareas de forma simultánea lo cual hace que el tiempo se reduzca en una gran cantidad como se puede ver en el pdf de: [Documentos](Docs/).
+ 
+Como se puede observar en los resultados de tiempo en las 5 entradas diferentes que se tomaron a la hora de correr cada uno de los programas se puede notar que el algoritmo secuencial tomo significante más tiempo que el paralelo y esto se debe a la forma en que esta paralelizado el programa este reliza las tareas de forma simultánea lo cual hace que el tiempo se reduzca en una gran cantidad como se puede ver en el pdf de: [Documentos](Docs/). De la misma manera se puede observar como varía el código paralelo según su tipo. Esto se ve en la sección Documentos](Docs/) al igual se incluye sus gráficas.
 
 ## 9. Guía paso a paso
 
