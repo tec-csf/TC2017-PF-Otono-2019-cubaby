@@ -78,8 +78,15 @@ Como se puede observar en los resultados de tiempo en las 5 entradas diferentes 
 
 ## 9. Guía paso a paso
 
-*[Incluya aquí la guía para la ejecución de los códigos.]*
-* Descargar el código 
+### Secuencial
+* Descargar el código
+* El código secuencial se encuentra en el folder secuencial. Se compila asi: g++ Proyecto_Final_Seq.cpp -o PFS.
+* Una vez compilado, se corre de la siguiente manera (en Linux/Mac): ./PFS <num. etapas> <num. competidores>. En Windows, se corre así: PFS.exe <num. etapas> <num. competidores>
+
+### Paralelo
+* Descargar el código
+* El código paralelo se encuentra en el folder paralelo. Se compila así: g++ -fopenmp Proyecto_Final -o Proyecto_Final
+* Una vez compilado, se corre de la siguiente manera: ./Proyecto_Final <num. etapas> <num. competidores>. Se puede especificar la manera de paralelización usando OMP_SCHEDULE=(dynamic/guided/auto), <chunk_size> antes del ./
 
 
 ## 10. Referencias
