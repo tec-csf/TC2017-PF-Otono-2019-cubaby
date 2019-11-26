@@ -51,7 +51,7 @@ El problema que se busca representar en este código es representar la carrera d
 
 ## 3. Solución [Secuencial](Secuencial/).
 
-Para resolver el problema de forma secuencial lo que se hizo fue crear un vector de ints que representan a los corredores, asi mismo se usa una función para crear accidentes aleatorios a los competidores con una probabilidad del 10%, depués el tiempo se mide conforme el vector de corredores recorre cada etapa y va avanzando el tiempo y se suma al contador del tiempo 0.0002 segundos el cual es el tiempo que pierde un corredor por un accidente. 
+Para resolver el problema de forma secuencial lo que se hizo fue crear un vector de ints que representan a los corredores, asi mismo se usa una función para crear accidentes aleatorios a los competidores con una probabilidad del 10%, depués el tiempo se mide conforme el vector de corredores recorre cada etapa y va avanzando el tiempo y se suma al contador del tiempo 0.0002 segundos el cual es el tiempo que pierde un corredor por un accidente. El programa se puede encontrar en: [Secuencial](Secuencial/).
 
 ## 4. Análisis de los inhibidores del paralelismo
 
@@ -62,24 +62,35 @@ Para el código paralelo existen dos importamtes inhibidores los cuales son los 
 
 ## 5. Solución [Paralelo](Paralelo/).
 
-*[Incluya aquí la descripción de la solución paralela.]*
+Para la solución en paralelo lo que se hizo fue crear un 2 ciclos para que el programa pudiera representar los corredores usando threads, la solución se parece mucho a la secuencial debido a que el programa representa a los corredores y las etapas según sean especificadas por el usuario al igual hay eventos aleatorios lo cual afecta lops tiempos de los corredores. Se uso un pragma para paralelizar el ciclo que simula los corredores que van avanzado por las etapas que son especificados por el usuario a la hora de correr el programa.
 
 ## 6. Tabla de resultados
 
-*[Incluya aquí la tabla con los resultados de las mediciones.]*
+La tabla de resultados se incluye en un pdf en la parte de [Documentos](Docs/). la tabla es una muestra de diferentes tiempos que se tomaron según las especificaciones cambiando el número de threads, al igual se incluye la gráfica de como varía el tiempo en los códigos secuencial y los tipos de paralelo.
 
 ## 7. Gráfica(s) comparativa(s)
 
-*[Incluya aquí la(s) gráfica(s) comparativa(s).]*
+Las gráficas comparando los dos tipos de algoritmos y sus tipos se encuentra en el pdf de: [Documentos](Docs/).
 
 ## 8. Interpretación de los resultados
+ 
+Como se puede observar en los resultados de tiempo en las 5 entradas diferentes que se tomaron durante la ejecución del programa se puede notar que el algoritmo secuencial tomó significantemente más tiempo que el paralelo. Esto probablemente se debe a la forma en que esta paralelizado el programa. Porque nosotros usamos una thread para simular un corredor, nos 'saltamos' la necesidad de tener un tercer ciclo, lo cual reduce la complejidad de O(n^3) en el secuencial a O(n^2). Esto se puede ver en nuestra sección de: [Documentos](Docs/). De la misma manera se puede observar como varía el código paralelo según su tipo. Nostros esperábamos que mientras más incrementaramos el número de corredores se acortaría la diferencia entre el secuencial y el paralelo por el incremento del overhead, sin embargo ocurrió lo contrario. Esto se puede deber a la reducción de complejidad mencionada previamente. 
 
-*[Incluya aquí la interpretación de los resultados.]*
+Finalmente, en lo referente a los diferentes métodos de paralelización, la diferencia fue mínima. En general, el método estático fue el más lento, mientras que el dinámico fue el segundo más tardado en cantidades bajas de competidores, pero en cantidades más altas terminó siendo el mejor método. 
 
 ## 9. Guía paso a paso
 
-*[Incluya aquí la guía para la ejecución de los códigos.]*
+### Secuencial
+* Descargar el código
+* El código secuencial se encuentra en el folder secuencial. Se compila asi: g++ Proyecto_Final_Seq.cpp -o PFS.
+* Una vez compilado, se corre de la siguiente manera (en Linux/Mac): ./PFS <num. etapas> <num. competidores>. En Windows, se corre así: PFS.exe <num. etapas> <num. competidores>
+
+### Paralelo
+* Descargar el código
+* El código paralelo se encuentra en el folder paralelo. Se compila así: g++ -fopenmp Proyecto_Final -o Proyecto_Final
+* Una vez compilado, se corre de la siguiente manera: ./Proyecto_Final <num. etapas> <num. competidores>. Se puede especificar la manera de paralelización usando OMP_SCHEDULE=(dynamic/guided/auto), <chunk_size> antes del ./
+
 
 ## 10. Referencias
 
-*[Incluya aquí las referencias a sitios de interés y cualquier otra información que haya utilizado para realizar el proyecto y que le puedan ser de utilidad a otras personas que quieran usarlo como referencia]*
+https://www.openmp.org/wp-content/uploads/OpenMP-4.0-C.pdf 
