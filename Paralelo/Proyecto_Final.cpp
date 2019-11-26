@@ -56,21 +56,31 @@ void printStandings(vector<int> stands, vector<chrono::microseconds> times)
 
 int main(int argc, char const *argv[])
 {
-    if (argc < 3)
+    if (argc < 4)
     {
-        printf("Uso: ./Proyecto_Final <numero de etapas> <numero de competidores>");
+        printf("Uso: ./Proyecto_Final <numero de etapas> <numero de competidores> <0(sin prints de eventos) / 1(con prints de eventos)>");
+        exit(1);
     }
     srand(time(NULL));
-    int num_competidores, etapas;
+    int num_competidores, etapas, prints;
     int r;
     int q;
     int drogas;
     int progreso = 0;
     etapas = atoi(argv[1]);
     num_competidores = atoi(argv[2]);
+    prints = atoi(argv[3]);
+
+    if (num_competidores < 0 || etapas < 0)
+    {
+        printf("Por favor especifica un numero positivo para etapas/competidores");
+        exit(1);
+    }
+
     omp_set_num_threads(num_competidores);
     vector<int> standings;
     vector<chrono::microseconds> tiempos;
+    auto Pstart = chrono::steady_clock::now();
     for (q = 0; q < etapas + 1; q++)
     {
         printf("Etapa %d \n", q);
@@ -84,13 +94,21 @@ int main(int argc, char const *argv[])
             int flag = hasAccident();
             if (flag == 1)
             {
-                //printf("Accidente de %d \n", omp_get_thread_num() + 1);
+                if (prints == 1)
+                {
+                    printf("Accidente de %d \n", omp_get_thread_num());
+                }
+
                 sleep(0.002);
             }
             else if (flag == 2)
             {
                 auto start = chrono::steady_clock::now();
-                //printf("Inyeccion de sangre oxigenada de %d \n", omp_get_thread_num() + 1);
+
+                if (prints == 1)
+                {
+                    printf("Inyeccion de sangre oxigenada de %d \n", omp_get_thread_num());
+                }
             }
             progreso += 1;
             auto stop = chrono::steady_clock::now();
@@ -105,8 +123,9 @@ int main(int argc, char const *argv[])
             }
         }
     }
+    auto Pend = chrono::steady_clock::now();
+    auto Pduration = chrono::duration_cast<chrono::milliseconds>(Pend - Pstart);
+    cout << "El tiempo de ejecucion total fue: " << Pduration.count() << " milisegundos" << endl;
 
     return 0;
-
-    //TODO: Implementar accidentes,medir progreso, checar orden en vector,
 }

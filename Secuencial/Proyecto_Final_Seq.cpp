@@ -11,6 +11,8 @@
 using namespace std;
 using namespace std::chrono;
 
+vector<int> tres;
+
 bool comparison(const pair<int, microseconds> &a, const pair<int, microseconds> &b)
 {
     return a.second < b.second;
@@ -58,18 +60,26 @@ void printStandings(vector<int> stands, vector<microseconds> times)
 int main(int argc, char const *argv[])
 {
     srand(time(NULL));
-    if (argc < 3)
+    if (argc < 4)
     {
-        printf("Uso: ./Proyecto_Final <numero de etapas> <numero de competidores>");
+        printf("Uso: ./Proyecto_Final <numero de etapas> <numero de competidores> <0(sin prints de eventos) / 1(con prints de eventos)>");
         exit(0);
     }
 
-    int num_competidores, etapas;
+    int num_competidores, etapas, prints;
     int progreso = 0;
     etapas = atoi(argv[1]);
     num_competidores = atoi(argv[2]);
+    prints = atoi(argv[3]);
+
+    if (num_competidores < 0 || etapas < 0)
+    {
+        printf("Por favor especifica un numero positivo para etapas/competidores");
+        exit(1);
+    }
     vector<int> standings;
     vector<microseconds> tiempos;
+    auto Pstart = chrono::steady_clock::now();
 
     for (int q = 0; q < etapas + 1; q++)
     {
@@ -85,14 +95,21 @@ int main(int argc, char const *argv[])
                 int flag = hasAccident();
                 if (flag == 1)
                 {
-                    // printf("Accidente de %d \n", v);
+                    if (prints == 1)
+                    {
+                        printf("Accidente de %d \n", v);
+                    }
+
                     sleep(0.002);
                 }
 
                 else if (flag == 2)
                 {
-                    auto start = chrono::steady_clock::now();
-                    //printf("Inyeccion de sangre oxigenada de %d \n", omp_get_thread_num() + 1);
+                    auto start = chrono::high_resolution_clock::now();
+                    if (prints == 1)
+                    {
+                        printf("Inyeccion de sangre oxigenada de %d \n", v);
+                    }
                 }
                 progreso += 1;
             }
@@ -103,6 +120,11 @@ int main(int argc, char const *argv[])
             standings.push_back(v);
         }
     }
+    auto Pend = chrono::steady_clock::now();
+    auto Pduration = chrono::duration_cast<chrono::milliseconds>(Pend - Pstart);
+    cout << "El tiempo de ejecucion total fue: " << Pduration.count() << " milisegundos" << endl;
+
+    //
 
     return 0;
 
